@@ -1,0 +1,74 @@
+{
+    custom_tagvars:{
+        
+        tagvar_category_weapons:{
+            type: "iterator",
+            start_quest_index: 0,
+            iterations:[
+                "weapon_1",
+                "weapon_2",
+                "weapon_3"
+            ]
+        }
+    },
+
+    global_tags:{
+
+        loc_description:[
+            "multiple strings in the array will ",
+            "be concatinated.",
+            "certain tag vars can be used as one of the array values like: ",
+            "tagvar_category_weapons",
+            " to act like variables. This can be used to ",
+            "give each quest similar locales with variance via variables."
+        ],
+
+        loc_acc_msg:[
+            "Use any ",
+            "cat_tag",
+            " category weapon to progress this quest."
+        ],
+
+        dyn_fin_condition:[
+            {name: "Kills", fac: "Pmc", cnt: 10, slope: 3}
+        ]
+    },
+
+    quests:{
+
+        example_quest_1:{
+
+            side: "Pmc",
+            trader: "therapist",
+    
+            loc_quest_name: ["Example Quest 1 Name"],
+            loc_description: ["Quest description"],
+            loc_acc_msg: ["Player except message here"],
+            loc_chng_msg: ["Change quest message"],
+            loc_cmplt_msg: ["Quest complete message"],
+            loc_fail_msg: ["Quest fail message"],
+            loc_start_msg: ["Start message"],
+            loc_succ_msg: ["Success message"],
+
+            image_filename: "Mod will calculate path based on img name",
+
+            bool_can_show_notif: true,
+            bool_inta_cmplt: false,
+            bool_restartable: false,
+            bool_secret_quest: false,
+
+            start_conditions: [{name: "Kills", fac: "Pmc", cnt: 10}],
+            fin_conditions: [{name: "Kills", fac: "Pmc", cnt: 10}],
+
+            start_rewards: {name: "RewardNameHere", params: "params needed to calc cond here"},
+            fail_rewards: {name: "RewardNameHere", params: "params needed to calc cond here"},
+            succ_rewards: {name: "RewardNameHere", params: "params needed to calc cond here"}
+        },
+
+        example_quest_2:{
+
+            side: "Pmc",
+            trader: "prapor",
+        }
+    }
+}
